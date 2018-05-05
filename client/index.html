@@ -22,14 +22,20 @@
     <!-- your scripts -->
     <script src="env/config.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="xss-escape/xss-escape.js"></script>
+    <script>
+    var escapedString = xssEscape(unsafeString);
+    </script>
   </head>
   <body>
     <div id="main">
       <h1>chatterbox</h1>
         <div id="roomSelect">
-          Room: <select></select>
+          Room: <select><option value="Defaut">Default</option></select>
+          <p><input id = "roomText" type = "text"> </input><button id = "addRoom">Add Room</button></p>
         </div>
-        <p><input id = "submit" type = "text"></input><button id = "send">Submit</button></p>
+        <p><input id = "submit" type = "text"></input> <button id = "send">Send Message</button></p>
+        <p><button id = "refresh">Refresh Messages</button></p>
       <div id="chats"></div>
     </div>
   </body>

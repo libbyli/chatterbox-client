@@ -76,7 +76,6 @@ form input[type=text] {
 }
 
 .chat .username {
-    font-weight: 800;
 }
 
 .chat:hover {
@@ -94,7 +93,7 @@ form input[type=text] {
 }
 
 .friend {
-    color: #fff;
-    background-color: #0090da;
+    color: #000000;
+    font-weight: bold;
 }
 
