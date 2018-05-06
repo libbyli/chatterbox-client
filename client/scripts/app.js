@@ -51,12 +51,9 @@ let app = {
               app.renderBold(message);
             }
             app.renderMessage(message);
-            }
-          });
+          }
+        });
         $('.username').click(app.handleUsernameClick);
-        console.log(app.friends);
-
-        // app.init();
         console.log('chatterbox: Message received');
       },
       error: function (data) {
@@ -75,11 +72,11 @@ let app = {
   },
 
   renderMessage(message) {
-    $('#chats').append(`<div class = "chat" id = "${message.roomname}"><span id = '${message.username}' class = "username">${message.username}<br /></span><span>${message.text}</span></div>`);
+    $('#chats').append(`<div class = "chat" id = "${_.escape(message.roomname)}"><span id = '${_.escape(message.username)}' class = "username">${_.escape(message.username)}<br /></span><span>${_.escape(message.text)}</span></div>`);
   },
 
   renderBold(message) {
-    $('#chats').append(`<div class = "chat" id = "${message.roomname}"><span id = '${message.username}' class = "username">${message.username}<br /></span><span class = "friend">${message.text}</span></div>`);
+    $('#chats').append(`<div class = "chat" id = "${_.escape(message.roomname)}"><span id = '${_.escape(message.username)}' class = "username">${_.escape(message.username)}<br /></span><span class = "friend">${_.escape(message.text)}</span></div>`);
   },
 
   renderRoom(room) {
